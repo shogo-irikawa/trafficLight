@@ -33,7 +33,7 @@ class TrafficLight{
             )
     }//func start閉じる
     
-    @objc func countup(){//引数は渡せれない。方法はあるが。。。
+    @objc func countup(){//引数は渡せれない(シンタックスシュガー理解必要)
 //間違い⇨ @objc func countup(lightColor: String){
         count += 1
         print("残り\(limit-count)秒です")
@@ -43,7 +43,7 @@ class TrafficLight{
             count = 0
             switch lightColor{
             case "red":
-                self.lightColor = "blue" //なんでself??
+                self.lightColor = "blue" //なんでself必須??
             case "blue":
                 self.lightColor = "yellow"
             default:
