@@ -16,13 +16,13 @@ class TrafficLight{
             switch lightColor {
             case "red":
                 print("信号が赤です")
-                limit = 6
+                limit = 7
             case "blue":
                 print("信号が青です")
                 limit = 4
             default:
                 print("信号が黄です")
-                limit = 1
+                limit = 2
             }
             timer = Timer.scheduledTimer(
                 timeInterval: 1,
