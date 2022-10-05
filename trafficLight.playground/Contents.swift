@@ -9,20 +9,20 @@ class TrafficLight{
     var count: Int = 0
     var lightColor: String = ""
     var limit: Int = 0
-            
+    var lightTimeList: [Int] = [7,4,2]
     func start(lightColor: String){
         self.lightColor = lightColor//self.lightColorとしないといけない
 //       while totalCount <= 5//ここで繰り返してしまうとtimerが重複してしまう。さらにinvalidateは1つを残して消滅
             switch lightColor {
             case "red":
                 print("信号が赤です")
-                limit = 7
+                limit = lightTimeList[0]
             case "blue":
                 print("信号が青です")
-                limit = 4
+                limit = lightTimeList[1]
             default:
                 print("信号が黄です")
-                limit = 2
+                limit = lightTimeList[2]
             }
             timer = Timer.scheduledTimer(
                 timeInterval: 1,
@@ -65,6 +65,7 @@ class NextLight{
         trafficLight.start(lightColor: lightColor)
     }
 }
+
 let lightColor: String = "red"
 let trafficLight = TrafficLight()
 trafficLight.start(lightColor: lightColor)
