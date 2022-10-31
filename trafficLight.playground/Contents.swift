@@ -47,7 +47,7 @@ class TrafficLight{
             print("信号が変わります")
             let isCountEnd: Bool = limit == count
             count = 0
-            switch lightColor{//⭐️.self追加
+            switch lightColor{
             case LightColor.red:
                 lightColor = LightColor.blue
             case LightColor.blue:
