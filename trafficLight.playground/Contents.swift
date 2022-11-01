@@ -9,7 +9,7 @@ class TrafficLight{
     var count: Int = 0
     var limit: Int = 0
     var lightTimeList: [Int] = [7,4,2]
-    enum LightColor{
+    enum LightColor {
         case red
         case blue
         case yellow
@@ -40,14 +40,14 @@ class TrafficLight{
         )
     }
     
-    @objc func countup(){
+    @objc func countup() {
         count += 1
         print("残り\(limit-count)秒です")
-        if limit <= count{
+        if limit <= count {
             print("信号が変わります")
             let isCountEnd: Bool = limit == count
             count = 0
-            switch lightColor{
+            switch lightColor {
             case .red:
                 lightColor = LightColor.blue
             case .blue:
@@ -64,9 +64,9 @@ class TrafficLight{
     }
 }
 
-class NextLight{
+class NextLight {
     let trafficLight = TrafficLight()
-    func roop(lightColor: TrafficLight.LightColor){
+    func roop(lightColor: TrafficLight.LightColor) {
         print("\(lightColor)")
         trafficLight.start(lightColor: lightColor)
     }
