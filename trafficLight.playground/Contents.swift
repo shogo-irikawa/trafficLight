@@ -10,7 +10,7 @@ class TrafficLight{
     var limit: Int = 0
     var lightTimeList: [Int] = [7,4,2]
     enum LightColor{
-        case red//(limit: Int)
+        case red
         case blue
         case yellow
     }
@@ -21,10 +21,10 @@ class TrafficLight{
     
     func start(lightColor: LightColor) {
         switch lightColor {
-        case LightColor.red :
+        case .red :
             print("信号が赤です")
             limit = lightTimeList[0]
-        case LightColor.blue:
+        case .blue:
             print("信号が青です")
             limit = lightTimeList[1]
         default:
@@ -48,9 +48,9 @@ class TrafficLight{
             let isCountEnd: Bool = limit == count
             count = 0
             switch lightColor{
-            case LightColor.red:
+            case .red:
                 lightColor = LightColor.blue
-            case LightColor.blue:
+            case .blue:
                 lightColor = LightColor.yellow
             default:
                 lightColor = LightColor.red
