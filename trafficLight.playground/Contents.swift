@@ -13,6 +13,14 @@ class TrafficLight{
         case red
         case blue
         case yellow
+        
+        var durationTime: Int{
+            switch self{
+            case .red: return 7
+            case .blue: return 4
+            case .yellow: return 2
+            }
+        }
     }
     
     var lightColorRed = LightColor.red
@@ -23,13 +31,16 @@ class TrafficLight{
         switch lightColor {
         case .red :
             print("信号が赤です")
-            limit = lightTimeList[0]
+            let type: LightColor = .red
+            limit = type.durationTime//lightTimeList[0]
         case .blue:
             print("信号が青です")
-            limit = lightTimeList[1]
+            let type: LightColor = .blue
+            limit = type.durationTime//lightTimeList[0]
         default:
             print("信号が黄です")
-            limit = lightTimeList[2]
+            let type: LightColor = .yellow
+            limit = type.durationTime//lightTimeList[0]
         }
         timer = Timer.scheduledTimer(
             timeInterval: 1,
